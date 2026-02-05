@@ -1,5 +1,7 @@
 # Orch - Antigravity Demo Orchestration
 
+**Repository**: [https://github.com/agylabs/orch](https://github.com/agylabs/orch)
+
 ## Project Intent
 
 This repository serves as the orchestration hub for managing Google Antigravity demonstration repositories within the `agylabs` organization.
@@ -43,6 +45,18 @@ This repository is intended for:
 3. Use the orchestration tools to create new demo repositories
 4. Follow the configuration guidelines for your specific demo needs
 
+## Workflow
+
+To maintain a clean and stable codebase, all contributors must follow this workflow:
+
+1.  **Never push directly to `main`**: All changes must be developed in a feature or bugfix branch.
+2.  **Branch Naming**: Use descriptive branch names (e.g., `feature/add-template`, `fix/api-auth`).
+3.  **Frequent Commits**: Make small, logical, and frequent commits. This makes it easier to track changes and roll back if necessary.
+4.  **Descriptive Commit Messages**: Write clear, concise commit messages that explain *why* a change was made.
+5.  **Pull Requests**: Submit a Pull Request (PR) when your changes are ready. PRs should be reviewed and pass CI before merging into `main`.
+6.  **Stay Updated**: Frequently pull the latest changes from `main` into your feature branch to resolve conflicts early.
+7.  **Atomic Changes**: Each branch and PR should focus on a single task or feature.
+
 ## Repository Structure
 
 ```
@@ -52,6 +66,41 @@ orch/
 ├── scripts/            # (Planned) Automation scripts
 └── docs/               # (Planned) Additional documentation
 ```
+
+## GitHub MCP Server
+
+This repository uses the **`github-agylabs-mcp`** MCP server for all GitHub operations. This server is pre-configured with the necessary permissions to create and manage repositories in the `agylabs` organization.
+
+### Creating New Demo Repositories
+
+Use the MCP server to programmatically create new demo repositories:
+
+```javascript
+mcp_github-agylabs-mcp_create_repository({
+  name: "demo-repository-name",
+  organization: "agylabs",
+  description: "Description of your Antigravity demo",
+  private: false,
+  autoInit: true  // Creates with README
+})
+```
+
+### Available MCP Operations
+
+The `github-agylabs-mcp` server provides full GitHub functionality including:
+- **Repository Management**: Create, update, and delete repositories
+- **Content Management**: Create, update, and delete files
+- **Branch Operations**: Create and manage branches
+- **Pull Requests**: Create, update, and merge pull requests
+- **Issues**: Create and manage issues
+- **Search**: Search repositories, code, issues, and pull requests
+
+### Best Practices
+
+- **Always use `github-agylabs-mcp`** for GitHub operations in this project
+- **Use descriptive names** for demo repositories (e.g., `antigravity-demo-auth`, `antigravity-demo-ml`)
+- **Include clear descriptions** to help others understand the demo's purpose
+- **Initialize with README** when creating new repositories for better documentation
 
 ## Contributing
 
