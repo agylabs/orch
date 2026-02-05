@@ -1,3 +1,6 @@
 [submodule "demos/customer-support-portal"]
 	path = demos/customer-support-portal
 	url = https://github.com/agylabs/customer-support-portal.git
+[submodule "demos/spring-boot-modernization"]
+	path = demos/spring-boot-modernization
+	url = https://github.com/agylabs/spring-boot-modernization.git
