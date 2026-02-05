@@ -4,3 +4,6 @@
 [submodule "demos/spring-boot-modernization"]
 	path = demos/spring-boot-modernization
 	url = https://github.com/agylabs/spring-boot-modernization.git
+[submodule "demos/log4shell-remediation"]
+	path = demos/log4shell-remediation
+	url = https://github.com/agylabs/log4shell-remediation.git
