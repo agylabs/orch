@@ -53,6 +53,41 @@ orch/
 └── docs/               # (Planned) Additional documentation
 ```
 
+## GitHub MCP Server
+
+This repository uses the **`github-agylabs-mcp`** MCP server for all GitHub operations. This server is pre-configured with the necessary permissions to create and manage repositories in the `agylabs` organization.
+
+### Creating New Demo Repositories
+
+Use the MCP server to programmatically create new demo repositories:
+
+```javascript
+mcp_github-agylabs-mcp_create_repository({
+  name: "demo-repository-name",
+  organization: "agylabs",
+  description: "Description of your Antigravity demo",
+  private: false,
+  autoInit: true  // Creates with README
+})
+```
+
+### Available MCP Operations
+
+The `github-agylabs-mcp` server provides full GitHub functionality including:
+- **Repository Management**: Create, update, and delete repositories
+- **Content Management**: Create, update, and delete files
+- **Branch Operations**: Create and manage branches
+- **Pull Requests**: Create, update, and merge pull requests
+- **Issues**: Create and manage issues
+- **Search**: Search repositories, code, issues, and pull requests
+
+### Best Practices
+
+- **Always use `github-agylabs-mcp`** for GitHub operations in this project
+- **Use descriptive names** for demo repositories (e.g., `antigravity-demo-auth`, `antigravity-demo-ml`)
+- **Include clear descriptions** to help others understand the demo's purpose
+- **Initialize with README** when creating new repositories for better documentation
+
 ## Contributing
 
 This is an internal orchestration repository. Contributions should focus on:
