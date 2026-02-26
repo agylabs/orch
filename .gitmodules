@@ -7,3 +7,6 @@
 [submodule "demos/log4shell-remediation"]
 	path = demos/log4shell-remediation
 	url = https://github.com/agylabs/log4shell-remediation.git
+[submodule "demos/gcp-developer-playground"]
+	path = demos/gcp-developer-playground
+	url = https://github.com/agylabs/gcp-developer-playground.git
